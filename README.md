@@ -11,7 +11,6 @@ The data includes details such as age, marital status, job, etc. of the individu
 
 # Summary of the models
 
-The best model performance achieved with Hyperdrive: 0.9173 of Accuracy
+The best model performance achieved with Hyperdrive: 0.9173 of accuracy
 
-
-The best model performance achieved with Azure Auto ML:
+The best model performance achieved with Azure Auto ML: 0.9169 of accuracy
