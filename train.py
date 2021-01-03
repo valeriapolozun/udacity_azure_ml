@@ -12,22 +12,10 @@ from azureml.data.dataset_factory import TabularDatasetFactory
 from azureml.core import Workspace, Dataset
 
 
-subscription_id = 'a0a76bad-11a1-4a2d-9887-97a29122c8ed'
-resource_group = 'aml-quickstarts-133125'
-workspace_name = 'quick-starts-ws-133125'
-
-workspace = Workspace(subscription_id, resource_group, workspace_name)
+url_path = "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
+ds = TabularDatasetFactory.from_delimited_files(url_path)
 
 
-dataset = Dataset.get_by_name(workspace, name='Bank-marketing-data')
-dataset.to_pandas_dataframe()
-
-ds = dataset
-
-x, y = clean_data(ds)
-x_train, x_test, y_train, y_test= train_test_split(x, y, test_size=0.2)
-
-run = Run.get_context()
 
 def clean_data(data):
     # Dict for cleaning data
@@ -56,6 +44,13 @@ def clean_data(data):
     y_df = x_df.pop("y").apply(lambda s: 1 if s == "yes" else 0)
     return x_df, y_df
 
+
+x, y = clean_data(ds)
+x_train, x_test, y_train, y_test= train_test_split(x, y, test_size=0.2)
+
+run = Run.get_context()
+
+
 def main():
     # Add arguments to script
     parser = argparse.ArgumentParser()
@@ -74,9 +69,7 @@ def main():
     run.log("Accuracy", np.float(accuracy))
     
     os.makedirs('./outputs', exist_ok=True)
-    joblib.dump(value=model, './outputs/model.joblib')
-
-
+    joblib.dump(value=model, filename='./outputs/model.joblib')
 
 if __name__ == '__main__':
     main()
