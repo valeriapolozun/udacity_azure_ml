@@ -65,6 +65,13 @@ Among the algorithms we had MaxAbsScaler LightGBM, MaxAbsScaler XGBoostClassifie
 The best model performance was achieved by the VotingEnsemble model, with the following parameter setting:
 
 
+
+The best model found by AutoML is not automatically saved. For saving the model the function .register_model() was used and the model could be saved in the desired folder:
+
+    #save best automl model
+    best_run.register_model(model_name='automl_best_model.pkl',model_path='outputs/')
+
+
 # Comparison of model performances
 
 We achieved comparably similar performance results by using Hyperdrive and AutoML for ML pipeline optimizations.
