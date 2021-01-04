@@ -62,9 +62,17 @@ The best model found by the Hyperdrive was compared against best model found by 
 The AutoML was run over 30minutes and was running 41 different algorithms.
 Among the algorithms we had MaxAbsScaler LightGBM, MaxAbsScaler XGBoostClassifier, VotingEnsemble, etc.
 
-The best model performance was achieved by the VotingEnsemble model, with the following parameter setting:
+To retrieve the best AutoMl Model and its parameters, the following code was used:
 
+    # Retrieve your best automl model.
+    best_run = remote_run.get_best_child()
+    best_run.get_details()
 
+The best model performance was achieved by the VotingEnsemble algorithm, with the following parameter settings:
+-min_samples_leaf = 0.01
+-min_samples_split= 0.2442
+-n_jobs=1
+-n_estimators=10
 
 The best model found by AutoML is not automatically saved. For saving the model the function .register_model() was used and the model could be saved in the desired folder:
 
