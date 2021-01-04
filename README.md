@@ -96,7 +96,7 @@ and/or apply the AutoML best model and try to fine-tune it further with Hyperdri
 
 # Delete the compute cluster after use
 From cost efficiency and resource management point of view it is important to delete the compute cluster after the training process is finished.
-This step has been done by using the cpu_cluster.delete() function:
+This step has been done by using the cpu_cluster.delete() function.
 
 
 
