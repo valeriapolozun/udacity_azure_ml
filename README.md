@@ -62,13 +62,16 @@ The best model found by the Hyperdrive was compared against best model found by 
 The AutoML was run over 30minutes and was running 41 different algorithms.
 Among the algorithms we had MaxAbsScaler LightGBM, MaxAbsScaler XGBoostClassifier, VotingEnsemble, etc.
 
+The best model performance was achieved by the VotingEnsemble algorithm, which appears to very efficient in general because ensemble learning improves machine learning results and predictive performance by combining multiple models as opposed to using single models - as stated in the MS Azure documentation.
+The Voting Ensemble predicts based on the weighted average of predicted class probabilities (for classification tasks) or predicted regression targets (for regression tasks).
+
 To retrieve the best AutoMl Model and its parameters, the following code was used:
 
     # Retrieve your best automl model.
     best_run = remote_run.get_best_child()
     best_run.get_details()
 
-The best model performance was achieved by the VotingEnsemble algorithm, with the following parameter settings:
+The best model with VotingEnsemble had the following parameter settings:
 - min_samples_leaf = 0.01
 - min_samples_split= 0.2442
 - n_jobs=1
