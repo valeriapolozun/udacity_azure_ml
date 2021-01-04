@@ -29,12 +29,9 @@ The pipeline include the following steps:
   - Estimator
   
 - The estimator is using the train.py, which does the following:
-      - Get the dataset from a given url
-      
-      - Get the data cleaned (steps documented in the function cleandata) 
-      
-      - Split the data into train and test dataset
-      
+      - Get the dataset from a given url,
+      - Get the data cleaned (steps documented in the function cleandata),
+      - Split the data into train and test dataset,
       - Fit the data to the model (Logistic Regression was the given algorithm to use)
 
 - Create the Hyperdriveconfig with the estimator, hyperparameter sampler and policy
