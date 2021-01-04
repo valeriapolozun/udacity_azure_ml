@@ -76,9 +76,8 @@ It is a great tool we can use for producing first results in a very short time.
 # Further improvement possibilities
 
 The model performance can be presumably improved if we consider the following possibilities:
--increase the size of dataset
--test further algorithms and hyperparameters with hyperdrive
--apply the AutoML best model and try to fine-tune it further with Hyperdrive
+We increase the size of dataset, we test further algorithms and hyperparameters with hyperdrive
+and/or apply the AutoML best model and try to fine-tune it further with Hyperdrive
 
 
 
