@@ -33,7 +33,7 @@ The pipeline include the following steps:
       - Get the data cleaned (steps documented in the function cleandata),
       - Split the data into train and test dataset,
       - Fit the data to the model (Logistic Regression was the given algorithm to use)
-
+      
 - Create the Hyperdriveconfig with the estimator, hyperparameter sampler and policy
 - Run the Hyperdrive
 - Log the model performances (Accuracy was used as performance metric)
@@ -93,6 +93,14 @@ It is a great tool we can use for producing first results in a very short time.
 The model performance can be presumably improved if we consider the following possibilities:
 We increase the size of dataset, we test further algorithms and hyperparameters with hyperdrive
 and/or apply the AutoML best model and try to fine-tune it further with Hyperdrive
+
+# Delete the compute cluster after use
+From cost efficiency and resource management point of view it is important to delete the compute cluster after the training process is finished.
+This step has been done by using the cpu_cluster.delete() function:
+
+
+
+
 
 
 
