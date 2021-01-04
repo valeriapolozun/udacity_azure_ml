@@ -30,8 +30,11 @@ The pipeline include the following steps:
   
 - The estimator is using the train.py, which does the following:
       - Get the dataset from a given url
+      
       - Get the data cleaned (steps documented in the function cleandata) 
+      
       - Split the data into train and test dataset
+      
       - Fit the data to the model (Logistic Regression was the given algorithm to use)
 
 - Create the Hyperdriveconfig with the estimator, hyperparameter sampler and policy
@@ -42,8 +45,8 @@ The pipeline include the following steps:
 
 # Parameter sampling
 
-RandomParameterSampler was used as based on experience the random sampling provides good results without the need of using the entire grid search.
-It is cost and time efficient way of finding the optimal hyperparameters.
+RandomParameterSampler was used as based on experience the random sampling provides good results without the need of screening the entire grid space.
+It is cost and time efficient way for finding the optimal hyperparameters.
 I had the following hyperparameters to fine-tune: 
 - C, which stands for inverse of regularization strength : uniform search applied between 0 and 100
 - max_iter, which stands for the max number of iterations until it converges : possible values of 50, 75, 100, 150
